@@ -31,7 +31,6 @@ class HomeScreen: UIView {
     lazy var cityNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "São Paulo"
         label.textColor = .primaryColor
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 20)
@@ -42,7 +41,6 @@ class HomeScreen: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .primaryColor
-        label.text = "25C"
         label.font = .systemFont(ofSize: 70, weight: .bold)
         label.textAlignment = .left
         return label
@@ -60,7 +58,6 @@ class HomeScreen: UIView {
     lazy var humidityLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Umidade%"
         label.font = .systemFont(ofSize: 12, weight: .semibold)
         label.textColor = .darkGray
         return label
@@ -69,7 +66,6 @@ class HomeScreen: UIView {
     lazy var humidityValueLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "1000mm"
         label.font = .systemFont(ofSize: 12, weight: .semibold)
         label.textColor = .darkGray
         return label
@@ -87,7 +83,6 @@ class HomeScreen: UIView {
     lazy var windLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Vento"
         label.font = .systemFont(ofSize: 12, weight: .semibold)
         label.textColor = .darkGray
         return label
@@ -96,7 +91,6 @@ class HomeScreen: UIView {
     lazy var windValueLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "10km/h"
         label.font = .systemFont(ofSize: 12, weight: .semibold)
         label.textColor = .darkGray
         return label
@@ -240,23 +234,25 @@ class HomeScreen: UIView {
             make.top.equalTo(headerView.snp.top).offset(15)
             make.leading.equalTo(headerView.snp.leading).offset(15)
             make.trailing.equalTo(headerView.snp.trailing).inset(15)
+            make.height.equalTo(20)
         }
     }
     
     private func temperatureLabelSnapKit(){
         temperatureLabel.snp.makeConstraints { make in
             make.top.equalTo(cityNameLabel.snp.bottom).offset(12)
-            make.leading.equalTo(headerView.snp.leading).offset(25)
+            make.leading.equalTo(headerView.snp.leading).offset(18)
+            make.height.equalTo(71)
         }
     }
     
     private func iconTemperatureImageViewSnapKit(){
         iconTemperatureImageView.snp.makeConstraints { make in
             make.top.equalTo(temperatureLabel.snp.top)
-            make.trailing.equalTo(headerView.snp.trailing).inset(25)
+            make.trailing.equalTo(headerView.snp.trailing).inset(18)
             make.height.width.equalTo(86)
             make.centerY.equalTo(temperatureLabel.snp.centerY)
-            make.leading.equalTo(temperatureLabel.snp.trailing).offset(15)
+            make.leading.equalTo(temperatureLabel.snp.trailing).offset(8)
         }
     }
     
