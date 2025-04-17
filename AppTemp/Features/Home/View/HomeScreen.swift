@@ -162,7 +162,7 @@ class HomeScreen: UIView {
     lazy var dailyForecastTableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.backgroundColor = .red
+        tableView.backgroundColor = .clear
         tableView.register(DailyForecastTableViewCell.self, forCellReuseIdentifier: DailyForecastTableViewCell.indentifier)
         tableView.separatorStyle = .none
         return tableView
@@ -231,7 +231,7 @@ class HomeScreen: UIView {
             make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(10)
             make.leading.equalToSuperview().offset(35)
             make.trailing.equalToSuperview().inset(35)
-            make.height.equalTo(170)
+            make.height.equalTo(150)
         }
     }
     
@@ -245,7 +245,7 @@ class HomeScreen: UIView {
     
     private func temperatureLabelSnapKit(){
         temperatureLabel.snp.makeConstraints { make in
-            make.top.equalTo(cityNameLabel.snp.bottom).offset(20)
+            make.top.equalTo(cityNameLabel.snp.bottom).offset(12)
             make.leading.equalTo(headerView.snp.leading).offset(25)
         }
     }
@@ -293,7 +293,7 @@ class HomeScreen: UIView {
     
     private func dailyForecastTableViewSnapKit(){
         dailyForecastTableView.snp.makeConstraints { make in
-            make.top.equalTo(dailyForecastLabel.snp.bottom).offset(30)
+            make.top.equalTo(dailyForecastLabel.snp.bottom).offset(16)
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
             make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom)
