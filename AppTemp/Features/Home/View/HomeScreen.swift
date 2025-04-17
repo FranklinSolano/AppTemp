@@ -136,6 +136,18 @@ class HomeScreen: UIView {
         return label
     }()
     
+    lazy var hourlyCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.itemSize = CGSize(width: 67, height: 84)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 12, bottom: 0, right: 12)
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.backgroundColor = .clear
+        collectionView.register(HourlyForecastCollectionViewCell.self, forCellWithReuseIdentifier:  HourlyForecastCollectionViewCell.indentifier)
+        collectionView.showsHorizontalScrollIndicator = false
+        return collectionView
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -144,6 +156,12 @@ class HomeScreen: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    public func setupCollectionViewDelegateAndDataSource(delegate: UICollectionViewDelegate, dataSource: UICollectionViewDataSource){
+        hourlyCollectionView.delegate = delegate
+        hourlyCollectionView.dataSource = dataSource
+        
     }
     
     private func setupView(){
@@ -159,6 +177,7 @@ class HomeScreen: UIView {
         headerView.addSubview(iconTemperatureImageView)
         addSubview(mainStackView)
         addSubview(hourlyForecastLabel)
+        addSubview(hourlyCollectionView)
         
     }
     
@@ -170,6 +189,7 @@ class HomeScreen: UIView {
         iconTemperatureImageViewSnapKit()
         mainStackViewSnapKit()
         hourlyForecastLabelSnapKit()
+        hourlyCollectionViewSnapKit()
     }
     
     private func backgroundImageViewSnapKit(){
@@ -217,14 +237,23 @@ class HomeScreen: UIView {
         mainStackView.snp.makeConstraints { make in
             make.top.equalTo(headerView.snp.bottom).offset(24)
             make.width.equalTo(206)
-            make.centerX.equalTo(backgroudImageView.snp.centerX)
+            make.centerX.equalToSuperview()
         }
     }
     
     private func hourlyForecastLabelSnapKit(){
         hourlyForecastLabel.snp.makeConstraints { make in
             make.top.equalTo(mainStackView.snp.bottom).offset(30)
-            make.centerX.equalTo(mainStackView.snp.centerX)
+            make.centerX.equalToSuperview()
+        }
+    }
+    
+    private func hourlyCollectionViewSnapKit(){
+        hourlyCollectionView.snp.makeConstraints { make in
+            make.top.equalTo(hourlyForecastLabel.snp.bottom).offset(22)
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.height.equalTo(84)
         }
     }
     
