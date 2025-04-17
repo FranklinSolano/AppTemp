@@ -149,6 +149,25 @@ class HomeScreen: UIView {
         return collectionView
     }()
     
+    lazy var dailyForecastLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "PROXIMOS DIAS"
+        label.font = .systemFont(ofSize: 12, weight: .semibold)
+        label.textColor = .darkGray
+        label.textAlignment = .center
+        return label
+    }()
+    
+    lazy var dailyForecastTableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.backgroundColor = .red
+        tableView.register(DailyForecastTableViewCell.self, forCellReuseIdentifier: DailyForecastTableViewCell.indentifier)
+        tableView.separatorStyle = .none
+        return tableView
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -161,7 +180,11 @@ class HomeScreen: UIView {
     public func setupCollectionViewDelegateAndDataSource(delegate: UICollectionViewDelegate, dataSource: UICollectionViewDataSource){
         hourlyCollectionView.delegate = delegate
         hourlyCollectionView.dataSource = dataSource
-        
+    }
+    
+    public func setupTableViewDelegateAndDataSource(delegate: UITableViewDelegate, dataSource: UITableViewDataSource){
+        dailyForecastTableView.delegate = delegate
+        dailyForecastTableView.dataSource = dataSource
     }
     
     private func setupView(){
@@ -178,6 +201,8 @@ class HomeScreen: UIView {
         addSubview(mainStackView)
         addSubview(hourlyForecastLabel)
         addSubview(hourlyCollectionView)
+        addSubview(dailyForecastLabel)
+        addSubview(dailyForecastTableView)
         
     }
     
@@ -190,6 +215,8 @@ class HomeScreen: UIView {
         mainStackViewSnapKit()
         hourlyForecastLabelSnapKit()
         hourlyCollectionViewSnapKit()
+        dailyForecastLabelSnapKit()
+        dailyForecastTableViewSnapKit()
     }
     
     private func backgroundImageViewSnapKit(){
@@ -257,5 +284,20 @@ class HomeScreen: UIView {
         }
     }
     
+    private func dailyForecastLabelSnapKit(){
+        dailyForecastLabel.snp.makeConstraints { make in
+            make.top.equalTo(hourlyCollectionView.snp.bottom).offset(30)
+            make.centerX.equalToSuperview()
+        }
+    }
+    
+    private func dailyForecastTableViewSnapKit(){
+        dailyForecastTableView.snp.makeConstraints { make in
+            make.top.equalTo(dailyForecastLabel.snp.bottom).offset(30)
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom)
+        }
+    }
     
 }
