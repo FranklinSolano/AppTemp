@@ -7,17 +7,11 @@
 
 import Foundation
 
-struct City: Codable {
-    let lat: Double
-    let lon: Double
+struct City {
+    let lat: String
+    let lon: String
     let name: String
 }
-
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let forecastResponse = try? JSONDecoder().decode(ForecastResponse.self, from: jsonData)
-
 
 // MARK: - ForecastResponse
 struct ForecastResponse: Codable {
@@ -29,13 +23,13 @@ struct ForecastResponse: Codable {
 // MARK: - Forecast
 struct Forecast: Codable {
     let dt: Int
-    let temp : Double
-    let  humidity: Int
+    let temp: Double
+    let humidity: Int
     let windSpeed: Double
     let weather: [Weather]
-    
+
     enum CodingKeys: String, CodingKey {
-        case dt,temp, humidity
+        case dt, temp, humidity
         case windSpeed = "wind_speed"
         case weather
     }
@@ -52,13 +46,10 @@ struct DailyForecast: Codable {
     let dt: Int
     let temp: Temp
     let weather: [Weather]
-    
 }
-
 
 // MARK: - Temp
 struct Temp: Codable {
     let day, min, max, night: Double
     let eve, morn: Double
 }
-

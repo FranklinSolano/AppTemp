@@ -15,14 +15,14 @@ class HomeViewModel {
     var delegate: HomeViewModelProtocol?
     
      var service = ServiceHome()
-    var city = City(lat: -23.6814346, lon: -46.9249599, name: "São Paulo")
+    var city = City(lat: "-23.6814346", lon: "-46.9249599", name: "São Paulo")
     var listCollectionView: [ForecastResponse] = []
     var listTableView: [ForecastResponse] = []
     var forecastResponse: ForecastResponse?
     
     
     func fetchData() {
-        service.fechtData(city: city) { [weak self] response in
+        service.fecthData(city: city) { [weak self] response in
             print("response: \(String(describing: response))")
             self?.forecastResponse = response
             DispatchQueue.main.async {
