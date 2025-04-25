@@ -15,41 +15,69 @@ struct City {
 
 // MARK: - ForecastResponse
 struct ForecastResponse: Codable {
-    let current: Forecast
-    let hourly: [Forecast]
-    let daily: [DailyForecast]
-}
-
-// MARK: - Forecast
-struct Forecast: Codable {
-    let dt: Int
-    let temp: Double
-    let humidity: Int
-    let windSpeed: Double
-    let weather: [Weather]
-
-    enum CodingKeys: String, CodingKey {
-        case dt, temp, humidity
-        case windSpeed = "wind_speed"
-        case weather
+    let current: Current
+    let forecast: Forecast
+    
+    struct Current: Codable {
+        let tempC: Double
+        let humidity: Int
+        let windKph: Double
+        let condition: Condition
+        
+        enum CodingKeys: String, CodingKey {
+            case tempC = "temp_c"
+            case humidity
+            case windKph = "wind_kph"
+            case condition
+        }
     }
-}
-
-// MARK: - Weather
-struct Weather: Codable {
-    let id: Int
-    let main, description, icon: String
-}
-
-// MARK: - DailyForecast
-struct DailyForecast: Codable {
-    let dt: Int
-    let temp: Temp
-    let weather: [Weather]
-}
-
-// MARK: - Temp
-struct Temp: Codable {
-    let day, min, max, night: Double
-    let eve, morn: Double
+    
+    struct Forecast: Codable {
+        let forecastday: [ForecastDay]
+    }
+    
+    struct ForecastDay: Codable {
+        let dateEpoch: Int
+        let day: Day
+        let hour: [Hour]
+        
+        enum CodingKeys: String, CodingKey {
+            case dateEpoch = "date_epoch"
+            case day, hour
+        }
+    }
+    
+    struct Day: Codable {
+        let maxTempC: Double
+        let minTempC: Double
+        let condition: Condition
+        
+        enum CodingKeys: String, CodingKey {
+            case maxTempC = "maxtemp_c"
+            case minTempC = "mintemp_c"
+            case condition
+        }
+    }
+    
+    struct Hour: Codable {
+        let timeEpoch: Int
+        let tempC: Double
+        let condition: Condition
+        let windKph: Double
+        let humidity: Int
+        
+        enum CodingKeys: String, CodingKey {
+            case timeEpoch = "time_epoch"
+            case tempC = "temp_c"
+            case condition
+            case windKph = "wind_kph"
+            case humidity
+        }
+    }
+    
+    struct Condition: Codable {
+        let text: String
+        let icon: String
+        let code: Int
+    }
 }

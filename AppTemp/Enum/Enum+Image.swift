@@ -10,6 +10,6 @@ import UIKit
 enum AppImage {
     static let background = UIImage(named: "backgroudImage")
     static let iconSun = UIImage(systemName: "sun.max")
-    static let iconTableViewCell = UIImage(systemName: "cloud.bolt.rain")
+    static let backgroundNigth = UIImage(named: "backgroudImageNigth")
 }
 

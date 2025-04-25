@@ -7,20 +7,22 @@
 import Foundation
 
 class ServiceHome {
-    
-    private let baseURL: String = "https://api.openweathermap.org/data/2.5/onecall"
-    private let apiKey: String = "5583802543c197e3e6fdfe843aa241c6"
-    
+    private let baseURL: String = "https://api.weatherapi.com/v1/forecast.json"
+    private let apiKey: String = "628ee94eb3df47aa98310006251804"
     private let session = URLSession.shared
     
-    func fecthData(city: City, _ completion: @escaping (ForecastResponse?) -> Void) {
-        let urlString = "\(baseURL)?lat=\(city.lat)&lon=\(city.lon)&appid=\(apiKey)&units=metric"
-        print("tessres----------------------------------------------------\(urlString)")
-        guard let url = URL(string: urlString) else { return }
-        print("tessres\(url)")
-
+    func fetchData(city: City, _ completion: @escaping (ForecastResponse?) -> Void) {
+        let urlString = "\(baseURL)?key=\(apiKey)&q=\(city.lat),\(city.lon)&days=7&aqi=no&alerts=no&lang=pt"
+        print("URL: \(urlString)")
+        
+        guard let url = URL(string: urlString) else {
+            completion(nil)
+            return
+        }
+        
         let task = session.dataTask(with: url) { data, response, error in
-            guard let data else {
+            guard let data = data else {
+                print("Erro: Sem dados")
                 completion(nil)
                 return
             }
@@ -29,12 +31,10 @@ class ServiceHome {
                 let forecastResponse = try JSONDecoder().decode(ForecastResponse.self, from: data)
                 completion(forecastResponse)
             } catch {
-                print(error)
+                print("Erro ao decodificar: \(error)")
                 completion(nil)
             }
         }
-        
         task.resume()
     }
-    
 }

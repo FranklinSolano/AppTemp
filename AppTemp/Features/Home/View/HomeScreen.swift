@@ -59,7 +59,8 @@ class HomeScreen: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 12, weight: .semibold)
-        label.textColor = .darkGray
+        label.text = "Umidade:"
+        label.textColor = .white
         return label
     }()
     
@@ -67,7 +68,7 @@ class HomeScreen: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 12, weight: .semibold)
-        label.textColor = .darkGray
+        label.textColor = .white
         return label
     }()
     
@@ -84,7 +85,8 @@ class HomeScreen: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 12, weight: .semibold)
-        label.textColor = .darkGray
+        label.textColor = .white
+        label.text = "Vento:"
         return label
     }()
     
@@ -92,7 +94,7 @@ class HomeScreen: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 12, weight: .semibold)
-        label.textColor = .darkGray
+        label.textColor = .white
         return label
     }()
     
@@ -125,7 +127,7 @@ class HomeScreen: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "PREVISAO POR HORA"
         label.font = .systemFont(ofSize: 12, weight: .semibold)
-        label.textColor = .darkGray
+        label.textColor = .white
         label.textAlignment = .center
         return label
     }()
@@ -138,7 +140,7 @@ class HomeScreen: UIView {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .clear
-        collectionView.register(HourlyForecastCollectionViewCell.self, forCellWithReuseIdentifier:  HourlyForecastCollectionViewCell.indentifier)
+        collectionView.register(HourlyForecastCollectionViewCell.self, forCellWithReuseIdentifier:  HourlyForecastCollectionViewCell.identifier)
         collectionView.showsHorizontalScrollIndicator = false
         return collectionView
     }()
@@ -148,7 +150,7 @@ class HomeScreen: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "PROXIMOS DIAS"
         label.font = .systemFont(ofSize: 12, weight: .semibold)
-        label.textColor = .darkGray
+        label.textColor = .white
         label.textAlignment = .center
         return label
     }()
@@ -157,7 +159,7 @@ class HomeScreen: UIView {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.backgroundColor = .clear
-        tableView.register(DailyForecastTableViewCell.self, forCellReuseIdentifier: DailyForecastTableViewCell.indentifier)
+        tableView.register(DailyForecastTableViewCell.self, forCellReuseIdentifier: DailyForecastTableViewCell.identifier)
         tableView.separatorStyle = .none
         return tableView
     }()
@@ -181,26 +183,28 @@ class HomeScreen: UIView {
         dailyForecastTableView.dataSource = dataSource
     }
     
-    private func setupView(){
-        setupElements()
-        setupConstraintsSnapKit()
+    func updateBackgroundImage(isNight: Bool) {
+        backgroudImageView.image = isNight ? AppImage.backgroundNigth : AppImage.background
     }
+}
+
+extension HomeScreen: ViewCodeProtocol {
+  
+    func setupElements(){
+       addSubview(backgroudImageView)
+       addSubview(headerView)
+       headerView.addSubview(cityNameLabel)
+       headerView.addSubview(temperatureLabel)
+       headerView.addSubview(iconTemperatureImageView)
+       addSubview(mainStackView)
+       addSubview(hourlyForecastLabel)
+       addSubview(hourlyCollectionView)
+       addSubview(dailyForecastLabel)
+       addSubview(dailyForecastTableView)
+       
+   }
     
-    private func setupElements(){
-        addSubview(backgroudImageView)
-        addSubview(headerView)
-        headerView.addSubview(cityNameLabel)
-        headerView.addSubview(temperatureLabel)
-        headerView.addSubview(iconTemperatureImageView)
-        addSubview(mainStackView)
-        addSubview(hourlyForecastLabel)
-        addSubview(hourlyCollectionView)
-        addSubview(dailyForecastLabel)
-        addSubview(dailyForecastTableView)
-        
-    }
-    
-    private func setupConstraintsSnapKit() {
+    func setupConstraints() {
         backgroundImageViewSnapKit()
         headerViewSnapKit()
         cityNameLabelSnapKit()
@@ -246,12 +250,11 @@ class HomeScreen: UIView {
         }
     }
     
-    private func iconTemperatureImageViewSnapKit(){
+    private func iconTemperatureImageViewSnapKit() {
         iconTemperatureImageView.snp.makeConstraints { make in
             make.top.equalTo(temperatureLabel.snp.top)
             make.trailing.equalTo(headerView.snp.trailing).inset(18)
             make.height.width.equalTo(86)
-            make.centerY.equalTo(temperatureLabel.snp.centerY)
             make.leading.equalTo(temperatureLabel.snp.trailing).offset(8)
         }
     }
@@ -295,5 +298,6 @@ class HomeScreen: UIView {
             make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom)
         }
     }
+    
     
 }
