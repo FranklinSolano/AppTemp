@@ -1,0 +1,48 @@
+# Xcode
+*.xcuserstate
+*.xcscmblueprint
+*.xccheckout
+*.xcuserdatad/
+*.xcworkspace/xcuserdata/
+
+# SwiftPM
+.build/
+Packages/
+.swiftpm/
+
+# CocoaPods
+Pods/
+Podfile.lock
+
+# Carthage
+Carthage/
+
+# Derived Data
+DerivedData/
+*.hmap
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# Archives
+*.xcarchive
+
+# Logs
+*.log
+
+# User-specific
+*.moved-aside
+*.swp
+*.DS_Store
+
+# Images (exemplo de pasta que você talvez não queira versionar)
+# AppTemp/Resources/Assets.xcassets/*.imageset/*.png
+
+# Xcode Playground
+timeline.xctimeline
+playground.xcworkspace
+
+

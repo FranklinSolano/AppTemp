@@ -7,28 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7D0C6CC82DB15979002D723C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7D0C6CC72DB15979002D723C /* SnapKit */; };
+		7D80E42F2DC298C4009B9B21 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7D80E42E2DC298C4009B9B21 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7DB07E7F2DB014A2005D5C29 /* AppTemp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppTemp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D80E3DC2DC297E4009B9B21 /* AppTemp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppTemp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		7DB07E912DB014A5005D5C29 /* Exceptions for "AppTemp" folder in "AppTemp" target */ = {
+		7D80E3EE2DC297E6009B9B21 /* Exceptions for "AppTemp" folder in "AppTemp" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 7DB07E7E2DB014A2005D5C29 /* AppTemp */;
+			target = 7D80E3DB2DC297E4009B9B21 /* AppTemp */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		7DB07E812DB014A2005D5C29 /* AppTemp */ = {
+		7D80E3DE2DC297E4009B9B21 /* AppTemp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				7DB07E912DB014A5005D5C29 /* Exceptions for "AppTemp" folder in "AppTemp" target */,
+				7D80E3EE2DC297E6009B9B21 /* Exceptions for "AppTemp" folder in "AppTemp" target */,
 			);
 			path = AppTemp;
 			sourceTree = "<group>";
@@ -36,29 +36,29 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7DB07E7C2DB014A2005D5C29 /* Frameworks */ = {
+		7D80E3D92DC297E4009B9B21 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D0C6CC82DB15979002D723C /* SnapKit in Frameworks */,
+				7D80E42F2DC298C4009B9B21 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7DB07E762DB014A2005D5C29 = {
+		7D80E3D32DC297E4009B9B21 = {
 			isa = PBXGroup;
 			children = (
-				7DB07E812DB014A2005D5C29 /* AppTemp */,
-				7DB07E802DB014A2005D5C29 /* Products */,
+				7D80E3DE2DC297E4009B9B21 /* AppTemp */,
+				7D80E3DD2DC297E4009B9B21 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		7DB07E802DB014A2005D5C29 /* Products */ = {
+		7D80E3DD2DC297E4009B9B21 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7DB07E7F2DB014A2005D5C29 /* AppTemp.app */,
+				7D80E3DC2DC297E4009B9B21 /* AppTemp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -66,68 +66,68 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7DB07E7E2DB014A2005D5C29 /* AppTemp */ = {
+		7D80E3DB2DC297E4009B9B21 /* AppTemp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7DB07E922DB014A5005D5C29 /* Build configuration list for PBXNativeTarget "AppTemp" */;
+			buildConfigurationList = 7D80E3EF2DC297E6009B9B21 /* Build configuration list for PBXNativeTarget "AppTemp" */;
 			buildPhases = (
-				7DB07E7B2DB014A2005D5C29 /* Sources */,
-				7DB07E7C2DB014A2005D5C29 /* Frameworks */,
-				7DB07E7D2DB014A2005D5C29 /* Resources */,
+				7D80E3D82DC297E4009B9B21 /* Sources */,
+				7D80E3D92DC297E4009B9B21 /* Frameworks */,
+				7D80E3DA2DC297E4009B9B21 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				7DB07E812DB014A2005D5C29 /* AppTemp */,
+				7D80E3DE2DC297E4009B9B21 /* AppTemp */,
 			);
 			name = AppTemp;
 			packageProductDependencies = (
-				7D0C6CC72DB15979002D723C /* SnapKit */,
+				7D80E42E2DC298C4009B9B21 /* SnapKit */,
 			);
 			productName = AppTemp;
-			productReference = 7DB07E7F2DB014A2005D5C29 /* AppTemp.app */;
+			productReference = 7D80E3DC2DC297E4009B9B21 /* AppTemp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		7DB07E772DB014A2005D5C29 /* Project object */ = {
+		7D80E3D42DC297E4009B9B21 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
-					7DB07E7E2DB014A2005D5C29 = {
+					7D80E3DB2DC297E4009B9B21 = {
 						CreatedOnToolsVersion = 16.0;
 					};
 				};
 			};
-			buildConfigurationList = 7DB07E7A2DB014A2005D5C29 /* Build configuration list for PBXProject "AppTemp" */;
+			buildConfigurationList = 7D80E3D72DC297E4009B9B21 /* Build configuration list for PBXProject "AppTemp" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 7DB07E762DB014A2005D5C29;
+			mainGroup = 7D80E3D32DC297E4009B9B21;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				7D0C6CC62DB15979002D723C /* XCRemoteSwiftPackageReference "SnapKit" */,
+				7D80E42D2DC298C4009B9B21 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 7DB07E802DB014A2005D5C29 /* Products */;
+			productRefGroup = 7D80E3DD2DC297E4009B9B21 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7DB07E7E2DB014A2005D5C29 /* AppTemp */,
+				7D80E3DB2DC297E4009B9B21 /* AppTemp */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		7DB07E7D2DB014A2005D5C29 /* Resources */ = {
+		7D80E3DA2DC297E4009B9B21 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -137,7 +137,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7DB07E7B2DB014A2005D5C29 /* Sources */ = {
+		7D80E3D82DC297E4009B9B21 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -147,7 +147,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		7DB07E932DB014A5005D5C29 /* Debug */ = {
+		7D80E3F02DC297E6009B9B21 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -157,7 +157,6 @@
 				DEVELOPMENT_TEAM = ZA8R8PH29T;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AppTemp/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = AppTempo;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -181,7 +180,7 @@
 			};
 			name = Debug;
 		};
-		7DB07E942DB014A5005D5C29 /* Release */ = {
+		7D80E3F12DC297E6009B9B21 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -191,7 +190,6 @@
 				DEVELOPMENT_TEAM = ZA8R8PH29T;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AppTemp/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = AppTempo;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -215,7 +213,7 @@
 			};
 			name = Release;
 		};
-		7DB07E952DB014A5005D5C29 /* Debug */ = {
+		7D80E3F22DC297E6009B9B21 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -278,7 +276,7 @@
 			};
 			name = Debug;
 		};
-		7DB07E962DB014A5005D5C29 /* Release */ = {
+		7D80E3F32DC297E6009B9B21 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -337,20 +335,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7DB07E7A2DB014A2005D5C29 /* Build configuration list for PBXProject "AppTemp" */ = {
+		7D80E3D72DC297E4009B9B21 /* Build configuration list for PBXProject "AppTemp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7DB07E952DB014A5005D5C29 /* Debug */,
-				7DB07E962DB014A5005D5C29 /* Release */,
+				7D80E3F22DC297E6009B9B21 /* Debug */,
+				7D80E3F32DC297E6009B9B21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7DB07E922DB014A5005D5C29 /* Build configuration list for PBXNativeTarget "AppTemp" */ = {
+		7D80E3EF2DC297E6009B9B21 /* Build configuration list for PBXNativeTarget "AppTemp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7DB07E932DB014A5005D5C29 /* Debug */,
-				7DB07E942DB014A5005D5C29 /* Release */,
+				7D80E3F02DC297E6009B9B21 /* Debug */,
+				7D80E3F12DC297E6009B9B21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -358,7 +356,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		7D0C6CC62DB15979002D723C /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		7D80E42D2DC298C4009B9B21 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
 			requirement = {
@@ -369,12 +367,12 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		7D0C6CC72DB15979002D723C /* SnapKit */ = {
+		7D80E42E2DC298C4009B9B21 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7D0C6CC62DB15979002D723C /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = 7D80E42D2DC298C4009B9B21 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 7DB07E772DB014A2005D5C29 /* Project object */;
+	rootObject = 7D80E3D42DC297E4009B9B21 /* Project object */;
 }
